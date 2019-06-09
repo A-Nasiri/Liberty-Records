@@ -1,68 +1,68 @@
 {
-    "items": [
-      {
-        "sys": { "id": "1" },
-        "fields": {
-          "title": "liberty",
-          "price": 19.99,
-          "image": { "fields": { "file": { "url": "" } } }
-        }
-      },
-      {
-        "sys": { "id": "2" },
-        "fields": {
-          "title": "liberty-vol2",
-          "price": 19.99,
-          "image": { "fields": { "file": { "url": "" } } }
-        }
-      },
-      {
-        "sys": { "id": "3" },
-        "fields": {
-          "title": "liberty-vol3",
-          "price": 12.99,
-          "image": { "fields": { "file": { "url": "./images/product-3.jpeg" } } }
-        }
-      },
-      {
-        "sys": { "id": "4" },
-        "fields": {
-          "title": "katana",
-          "price": 22.99,
-          "image": { "fields": { "file": { "url": "" } } }
-        }
-      },
-      {
-        "sys": { "id": "5" },
-        "fields": {
-          "title": "katana-vol2",
-          "price": 88.99,
-          "image": { "fields": { "file": { "url": "" } } }
-        }
-      },
-      {
-        "sys": { "id": "6" },
-        "fields": {
-          "title": "katana-vol3",
-          "price": 32.99,
-          "image": { "fields": { "file": { "url": "" } } }
-        }
-      },
-      {
-        "sys": { "id": "7" },
-        "fields": {
-          "title": "alchemy",
-          "price": 45.99,
-          "image": { "fields": { "file": { "url": "" } } }
-        }
-      },
-      {
-        "sys": { "id": "8" },
-        "fields": {
-          "title": "irezumi",
-          "price": 133.99,
-          "image": { "fields": { "file": { "url": "" } } }
-        }
+  "items": [
+    {
+      "sys": { "id": "1" },
+      "fields": {
+        "title": "liberty",
+        "price": 19.99,
+        "image": { "fields": { "file": { "url": "./img/liberty2.jpg" } } }
       }
-    ]
-  }
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "title": "liberty-vol2",
+        "price": 19.99,
+        "image": { "fields": { "file": { "url": "./img/hero.webp" } } }
+      }
+    },
+    {
+      "sys": { "id": "3" },
+      "fields": {
+        "title": "liberty-vol3",
+        "price": 12.99,
+        "image": { "fields": { "file": { "url": "./img/liberty3.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "4" },
+      "fields": {
+        "title": "katana",
+        "price": 22.99,
+        "image": { "fields": { "file": { "url": "./img/katana.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "5" },
+      "fields": {
+        "title": "katana-vol2",
+        "price": 88.99,
+        "image": { "fields": { "file": { "url": "./img/katana2.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "6" },
+      "fields": {
+        "title": "katana-vol3",
+        "price": 32.99,
+        "image": { "fields": { "file": { "url": "./img/katana3.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "7" },
+      "fields": {
+        "title": "alchemy",
+        "price": 45.99,
+        "image": { "fields": { "file": { "url": "./img/alchemy.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "8" },
+      "fields": {
+        "title": "irezumi",
+        "price": 133.99,
+        "image": { "fields": { "file": { "url": "./img/44609.jpg" } } }
+      }
+    }
+  ]
+}

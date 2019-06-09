@@ -123,6 +123,7 @@ body {
 .img-container {
   position: relative;
   overflow: hidden;
+  padding-top: 56.25%;
 }
 .bag-btn {
   position: absolute;
@@ -150,7 +151,10 @@ body {
 .product-img {
   display: block;
   width: 100%;
-  min-height: 12rem;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
   transition: var(--mainTransition);
 }
 .img-container:hover .product-img {
