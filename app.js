@@ -70,12 +70,55 @@ class UI {
         // Get album from products
         let cartItem = { ...Storage.getProduct(id), amount: 1 };
         // Add album to cart
+        cart = [...cart, cartItem];
         // Save cart in local storage
+        Storage.saveCart(cart);
         // Set cart values
+        this.setCartValues(cart);
         // Display cart item
+        this.addCartItem(cartItem);
         // Show cart when album added
+        this.showCart();
       });
     });
+  }
+
+  setCartValues(cart) {
+    let tempTotal = 0;
+    let itemsTotal = 0;
+
+    cart.map(item => {
+      tempTotal += item.price * item.amount;
+      itemsTotal += item.amount;
+    });
+
+    cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
+    cartItems.innerText = itemsTotal;
+  }
+
+  addCartItem(item) {
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
+    div.innerHTML = `
+    <img src=${item.image} alt="" />
+            <div>
+              <h4>${item.title}</h4>
+              <h5>$${item.price}</h5>
+              <span class="remove-item" data-id=${item.id}>remove</span>
+            </div>
+            <div>
+              <i class="fas fa-chevron-up"></i>
+              <p class="item-amount">${item.amount}</p>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+    `;
+    cartContent.appendChild(div);
+    console.log(cartContent);
+  }
+
+  showCart() {
+    cartOverlay.classList.add("transparentBcg");
+    cartDOM.classList.add("showCart");
   }
 }
 
@@ -88,6 +131,10 @@ class Storage {
   static getProduct(id) {
     let products = JSON.parse(localStorage.getItem("products"));
     return products.find(product => product.id === id);
+  }
+
+  static saveCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
 }
 
