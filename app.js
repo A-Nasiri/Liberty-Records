@@ -107,9 +107,9 @@ class UI {
               <span class="remove-item" data-id=${item.id}>remove</span>
             </div>
             <div>
-              <i class="fas fa-chevron-up"></i>
+              <i class="fas fa-chevron-up" data-id=${item.id}></i>
               <p class="item-amount">${item.amount}</p>
-              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-down" data-id=${item.id}></i>
             </div>
     `;
     cartContent.appendChild(div);
@@ -140,6 +140,36 @@ class UI {
   cartLogic() {
     clearCartBtn.addEventListener("click", () => {
       this.clearCart();
+    });
+
+    cartContent.addEventListener("click", ev => {
+      if (ev.target.classList.contains("remove-item")) {
+        let removeItem = ev.target;
+        let id = removeItem.dataset.id;
+        cartContent.removeChild(removeItem.parentElement.parentElement);
+        this.removeItem(id);
+      } else if (ev.target.classList.contains("fa-chevron-up")) {
+        let addAmount = ev.target;
+        let id = addAmount.dataset.id;
+        let tempItem = cart.find(item => item.id === id);
+        tempItem.amount += 1;
+        Storage.saveCart(cart);
+        this.setCartValues(cart);
+        addAmount.nextElementSibling.innerText = tempItem.amount;
+      } else if (ev.target.classList.contains("fa-chevron-down")) {
+        let lowerAmount = ev.target;
+        let id = lowerAmount.dataset.id;
+        let tempItem = cart.find(item => item.id === id);
+        tempItem.amount -= 1;
+        if (tempItem.amount > 0) {
+          Storage.saveCart(cart);
+          this.setCartValues(cart);
+          lowerAmount.previousElementSibling.innerText = tempItem.amount;
+        } else {
+          cartContent.removeChild(lowerAmount.parentElement.parentElement);
+          this.removeItem(id);
+        }
+      }
     });
   }
 
