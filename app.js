@@ -7,6 +7,9 @@ const cartItems = document.querySelector(".cart-items");
 const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
 const productsDOM = document.querySelector(".products-center");
+const menuBars = document.querySelector('.fa-bars');
+const closeMenuBtn = document.querySelector('.close-menu');
+const menu = document.querySelector('.menu');
 
 let cart = [];
 
@@ -53,6 +56,17 @@ class UI {
 
     productsDOM.innerHTML = result;
   }
+
+  showMenu() {
+    cartOverlay.classList.add("transparentBcg");
+    menu.classList.add("showCart");
+  }
+
+  hideMenu() {
+    cartOverlay.classList.remove("transparentBcg");
+    menu.classList.remove("showCart");
+  }
+
 
   getBagButtons() {
     const buttons = [...document.querySelectorAll(".bag-btn")];
@@ -126,6 +140,8 @@ class UI {
     this.populateCart(cart);
     cartBtn.addEventListener("click", this.showCart);
     closeCartBtn.addEventListener("click", this.hideCart);
+    menuBars.addEventListener('click', this.showMenu);
+    closeMenuBtn.addEventListener('click', this.hideMenu);
   }
 
   populateCart(cart) {
