@@ -65,10 +65,69 @@ body {
 }
 /* --------------- End of Navbar ---------------- */
 
+/* --------------- MENU ---------------- */
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 3;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  color: whitesmoke;
+  padding: 1.5rem;
+  transition: var(--mainTransition);
+  transform: translateX(-100%);
+}
+
+.close-menu {
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+.menu h2 {
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 2rem;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 90%;
+  width: 100%;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  min-height: 60%;
+  cursor: pointer;
+}
+
+.menu-social {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.menu i {
+  cursor: pointer;
+}
+/* ---------------End of MENU ---------------- */
+
 /* --------------- Hero ---------------- */
 .hero {
   min-height: calc(100vh - 60px);
   background: url("./img/688688.jpg") center/cover no-repeat;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,8 +147,9 @@ body {
   position: absolute;
   width: 0%;
   height: 100%;
-  background-color: darkcyan;
-  animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  background: darkcyan url("./img/giphy\ \(1\).gif") no-repeat center;
+  background-size: cover;
+  animation: rev-block 1.7s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   animation-delay: 1s;
 }
 
@@ -264,6 +324,11 @@ body {
 }
 @media screen and (min-width: 768px) {
   .cart {
+    width: 30vw;
+    min-width: 450px;
+  }
+
+  .menu {
     width: 30vw;
     min-width: 450px;
   }
