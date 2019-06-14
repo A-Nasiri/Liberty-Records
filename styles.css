@@ -19,6 +19,11 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+/* html,
+body {
+  overflow-x: hidden;
+} */
+
 /* --------------- Navbar ---------------- */
 .navbar {
   position: sticky;
@@ -126,15 +131,26 @@ body {
 /* --------------- Hero ---------------- */
 .hero {
   min-height: calc(100vh - 60px);
-  background: url("./img/688688.jpg") center/cover no-repeat;
+  background-color: #29323caf;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.hero:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url("./img/688688.jpg") center/cover no-repeat;
+  z-index: -1;
+}
+
 .banner {
   text-align: center;
-
   display: inline-block;
   padding: 2rem 6rem;
   position: relative;
@@ -154,7 +170,7 @@ body {
 }
 
 .banner-title {
-  font-size: 4rem;
+  font-size: 5rem;
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
   margin-bottom: 3rem;
@@ -299,7 +315,7 @@ body {
   width: 100%;
   height: 100%;
   transition: var(--mainTransition);
-  background: rgb(240, 157, 81, 0.5);
+  background: #008b8b63;
   z-index: 2;
   visibility: hidden;
 }
@@ -431,4 +447,38 @@ body {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .banner-title {
+    font-size: 3.5rem;
+  }
+
+  .banner {
+    padding: 2rem 0rem;
+  }
+
+  .navbar img {
+    width: 260px;
+  }
+
+  .footer {
+    padding: 3rem 0.5rem;
+  }
+
+  .follow {
+    margin-bottom: 1.5rem;
+  }
+
+  .social {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+  }
+
+  .social i {
+    margin-bottom: 1rem;
+  }
 }
