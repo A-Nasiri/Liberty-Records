@@ -27,7 +27,7 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  background-image: linear-gradient(to top, #ebbba7 0%, #cfc7f8 100%);
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
   z-index: 1;
 }
 
@@ -46,10 +46,13 @@ body {
 }
 .nav-icon {
   font-size: 1.5rem;
+  color: whitesmoke;
+  cursor: pointer;
 }
 .cart-btn {
   position: relative;
   cursor: pointer;
+  color: whitesmoke;
 }
 .cart-items {
   position: absolute;
@@ -72,16 +75,62 @@ body {
 }
 .banner {
   text-align: center;
-  background: rgba(255, 255, 255, 0.8);
+
   display: inline-block;
   padding: 2rem 6rem;
+  position: relative;
 }
+
+.banner:after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: darkcyan;
+  animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 1s;
+}
+
 .banner-title {
-  font-size: 3.4rem;
+  font-size: 4rem;
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
   margin-bottom: 3rem;
+  opacity: 0;
+  animation: appear-text 0.0001s linear forwards;
+  animation-delay: 1.4s;
+  color: whitesmoke;
 }
+
+@keyframes rev-block {
+  0% {
+    left: 0;
+    width: 0%;
+  }
+
+  50% {
+    left: 0;
+    width: 100%;
+  }
+
+  100% {
+    left: 100%;
+    width: 0%;
+  }
+}
+
+@keyframes appear-text {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .banner-btn {
   padding: 1rem 3rem;
   text-transform: uppercase;
@@ -92,6 +141,9 @@ body {
   border: 1px solid var(--primaryColor);
   transition: var(--mainTransition);
   cursor: pointer;
+  opacity: 0;
+  animation: appear-text 0.0001s linear forwards;
+  animation-delay: 1.4s;
 }
 .banner-btn:hover {
   background: transparent;
@@ -103,6 +155,7 @@ body {
 
 .products {
   padding: 4rem 0;
+  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 }
 .section-title h2 {
   text-align: center;
@@ -272,3 +325,45 @@ body {
 }
 
 /* --------------- End of Cart ---------------- */
+
+.footer {
+  min-height: 300px;
+  width: 100%;
+  padding: 3rem 1rem;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.follow {
+  font-size: 1.5rem;
+  color: whitesmoke;
+}
+
+.social {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.social i {
+  cursor: pointer;
+  color: white;
+}
+
+.social i:hover {
+  color: darkcyan;
+}
+
+.footer-logo {
+  width: 300px;
+  cursor: pointer;
+}
+
+.footer-logo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
