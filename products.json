@@ -13,7 +13,7 @@
       "fields": {
         "title": "liberty-vol2",
         "price": 19.99,
-        "image": { "fields": { "file": { "url": "./img/hero.webp" } } }
+        "image": { "fields": { "file": { "url": "./img/python2.jpg" } } }
       }
     },
     {
